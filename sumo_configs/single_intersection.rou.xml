@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Define vehicle type -->
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5.0" maxSpeed="13.89"/>
+
+    <!-- Define routes (edge sequences without junctions) -->
+    <route id="route_east_west" edges="east_in west_out"/>
+    <route id="route_west_east" edges="west_in east_out"/>
+    <route id="route_north_south" edges="north_in south_out"/>
+    <route id="route_south_north" edges="south_in north_out"/>
+
+    <!-- Flows for straight traffic (low density: 180 veh/hour per direction, matching paper's 0.05 veh/s) -->
+    <flow id="flow_east" type="car" route="route_east_west" begin="0" end="3600" vehsPerHour="180" departLane="0"/>
+    <flow id="flow_west" type="car" route="route_west_east" begin="0" end="3600" vehsPerHour="180" departLane="0"/>
+    <flow id="flow_north" type="car" route="route_north_south" begin="0" end="3600" vehsPerHour="180" departLane="0"/>
+    <flow id="flow_south" type="car" route="route_south_north" begin="0" end="3600" vehsPerHour="180" departLane="0"/>
+</routes>
